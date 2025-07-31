@@ -7,7 +7,7 @@ export const addFile = AsyncHandler(async (req, res) => {
       let data = [];
       const jsonArray = await csv().fromFile(req.file.path);
       if (!jsonArray) {
-         res.send({ status: 400, message: " select file" })
+         return res.send({ status: 400, message: " select file" })
       }
       console.log("user--id", req.user.id);
 
@@ -23,7 +23,8 @@ export const addFile = AsyncHandler(async (req, res) => {
       // console.log(data);
 
       const result = await Member.insertMany(data);
-      res.send({ status: 200, success: true, msg: 'csv imported', result });
+      // res.send({ status: 200, success: true, msg: 'csv imported', result });
+      res.status(200).json({ message: "csv imported ", result, success: 'true' })
 
 
    } catch (error) {

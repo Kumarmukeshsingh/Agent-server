@@ -78,11 +78,13 @@ export const loginUser = AsyncHandler(async (req, res) => {
       }, process.env.ACCESS_TOKEN, {
          expiresIn: "15m",
       })
+      // console.log("token", accessToken, user);
       res.status(200).json({ accessToken, user });
+
    }
 
 
-   // res.json({ message: "login the user" })
+   // res.json({ message: "login the user", user })
 })
 
 // current user

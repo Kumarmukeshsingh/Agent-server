@@ -12,12 +12,13 @@ import bodyParser from "body-parser";
 
 dotenv.config();
 const app = express();
-const Port = process.env.PORT || 6000;
+const Port = process.env.PORT || 8081;
+// const Port = 6000;
 
 
 // origin: "http://localhost:5173",
 const corsOption = {
-   origin: "https://localhost:5173",
+   origin: "http://localhost:5173",
    methods: "POST,GET,PUT,DELETE",
    credentials: true,
 }
