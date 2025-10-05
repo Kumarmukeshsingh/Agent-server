@@ -59,6 +59,7 @@ export const getMember = AsyncHandler(async (req, res) => {
 export const updateMember = AsyncHandler(async (req, res) => {
    const member = await Member.findById(req.params.id);
    console.log(member);
+   console.log( "from the boday :: ",req.body);
    if (!member) {
       res.status(404);
       throw new Error(" member  not found  ")

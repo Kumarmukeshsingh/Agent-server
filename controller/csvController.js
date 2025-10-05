@@ -3,8 +3,10 @@ import AsyncHandler from "express-async-handler"
 import csv from "csvtojson";
 
 export const addFile = AsyncHandler(async (req, res) => {
+   console.log("file path is - ", req.file.path);
    try {
       let data = [];
+
       const jsonArray = await csv().fromFile(req.file.path);
       if (!jsonArray) {
          return res.send({ status: 400, message: " select file" })

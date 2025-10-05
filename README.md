@@ -8,7 +8,9 @@ github:
 linkedin:
 deployed link :
 
-run command :-- npm num dev
+# run command :--
+
+npm num dev
 
 # USE SERVICE:
 
