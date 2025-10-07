@@ -6,8 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+     "build": "netlify deploy --prod",
   },
+ 
   "keywords": [],
   "author": "",
   "license": "ISC",
